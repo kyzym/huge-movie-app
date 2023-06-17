@@ -1,5 +1,5 @@
-import { useGetMovieReviews } from 'hooks/useGetMovieReviews';
-import { Box } from 'utils/Box.styled';
+import { useGetMovieReviews } from '../../hooks/useGetMovieReviews';
+import { Box } from '../../utils/Box.styled';
 import * as SC from '../Reviews/Reviews.styled';
 
 const Reviews = () => {

@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const CastList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+`;
+
 export const CastItem = styled.li`
   width: 200px;
   background-color: #e0e9e9;
@@ -18,4 +24,8 @@ export const NameRole = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
+`;
+
+export const CastWrapper = styled.div`
+  padding: 20px;
 `;

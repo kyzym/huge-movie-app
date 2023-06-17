@@ -1,7 +1,6 @@
-import { useGetMovieCast } from 'hooks/useGetMovieCast';
-import { startImageUrl } from 'utils/api/api';
-import { Box } from 'utils/Box.styled';
-import { noImage } from 'utils/services';
+import { useGetMovieCast } from '../../hooks/useGetMovieCast';
+import { startImageUrl } from '../../utils/api/api';
+import { noImage } from '../../utils/services';
 import * as SC from './Cast.styled';
 
 const Cast = () => {
@@ -10,9 +9,9 @@ const Cast = () => {
   if (!cast) return null;
 
   return (
-    <Box as="div" p="20px">
+    <SC.CastWrapper>
       {cast.length > 0 ? (
-        <Box as="ul" display="flex" flexWrap="wrap" gridGap={20}>
+        <SC.CastList>
           {cast.map(({ name, character, profile_path, id }) => (
             <SC.CastItem key={id}>
               <SC.Photo
@@ -29,11 +28,11 @@ const Cast = () => {
               </SC.NameRole>
             </SC.CastItem>
           ))}
-        </Box>
+        </SC.CastList>
       ) : (
         <p>No cast : (</p>
       )}
-    </Box>
+    </SC.CastWrapper>
   );
 };
 

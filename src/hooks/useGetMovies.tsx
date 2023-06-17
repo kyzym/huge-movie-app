@@ -1,8 +1,15 @@
 import { useEffect, useState } from 'react';
 import { getTrending } from '../utils/api/api';
+import { Movie } from '../types';
 
-export const useGetMovies = () => {
-  const [movies, setMovies] = useState([]);
+interface UseGetMoviesReturn {
+  movies: Movie[];
+  loading: boolean;
+  success: boolean;
+}
+
+export const useGetMovies = (): UseGetMoviesReturn => {
+  const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -10,7 +17,7 @@ export const useGetMovies = () => {
     const getTrendingMovies = async () => {
       setLoading(true);
       try {
-        const response = await getTrending();
+        const response: Movie[] = await getTrending();
         setMovies(response);
         setSuccess(true);
       } catch (error) {

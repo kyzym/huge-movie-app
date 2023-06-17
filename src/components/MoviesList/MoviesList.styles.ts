@@ -37,7 +37,12 @@ export const TitleContainer = styled.div`
   align-items: center;
   height: 110px;
 `;
-export const Rating = styled.p`
+
+interface RatingProps {
+  rating: number;
+}
+
+export const Rating = styled.p<RatingProps>`
   font-size: 18px;
   padding: 4px 8px;
   border-radius: 5px;

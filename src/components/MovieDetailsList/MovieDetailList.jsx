@@ -1,5 +1,5 @@
 import * as SC from './MovieDetailList.styled';
-import { startImageUrl } from 'utils/api/api';
+import { startImageUrl } from '../../utils/api/api';
 
 const MovieDetailList = ({
   movieDetails: { id, title, poster_path, overview, genres, vote_average },
@@ -17,10 +17,10 @@ const MovieDetailList = ({
       </SC.TextContent>
 
       <SC.SubTitle>
-        Users score:
+        Users score:{' '}
         <SC.Rating rating={vote_average.toFixed()}>
           {(vote_average * 10).toFixed(2)}
-        </SC.Rating>
+        </SC.Rating>{' '}
         %
       </SC.SubTitle>
     </div>

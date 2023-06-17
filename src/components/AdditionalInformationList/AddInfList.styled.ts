@@ -32,3 +32,9 @@ export const DetailsLink = styled(NavLink)`
     background-color: orangered;
   }
 `;
+
+export const DetailsList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;

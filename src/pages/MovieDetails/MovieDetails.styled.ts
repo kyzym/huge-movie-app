@@ -16,3 +16,9 @@ export const BackBtn = styled(NavLink)`
     background-color: rgba(255, 69, 0, 0.85);
   }
 `;
+
+export const MovieDetailsWrapper = styled.div`
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+`;

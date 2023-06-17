@@ -21,3 +21,13 @@ export const Link = styled(NavLink)`
     background-color: orangered;
   }
 `;
+
+export const Nav = styled.nav`
+  display: flex;
+  gap: 12px;
+`;
+
+export const Header = styled.header`
+  padding: 20px;
+  border-bottom: 1px solid black;
+`;
