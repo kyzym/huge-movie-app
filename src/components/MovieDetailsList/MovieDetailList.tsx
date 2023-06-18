@@ -1,7 +1,12 @@
 import * as SC from './MovieDetailList.styled';
 import { startImageUrl } from '../../utils/api/api';
+import { MovieDetails } from '../../types';
 
-const MovieDetailList = ({
+interface MovieDetailsProps {
+  movieDetails: MovieDetails;
+}
+
+const MovieDetailList: React.FC<MovieDetailsProps> = ({
   movieDetails: { id, title, poster_path, overview, genres, vote_average },
 }) => (
   <SC.MovieDetailList key={id}>
@@ -18,7 +23,7 @@ const MovieDetailList = ({
 
       <SC.SubTitle>
         Users score:{' '}
-        <SC.Rating rating={vote_average.toFixed()}>
+        <SC.Rating rating={parseFloat(vote_average.toFixed())}>
           {(vote_average * 10).toFixed(2)}
         </SC.Rating>{' '}
         %

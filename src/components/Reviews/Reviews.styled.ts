@@ -14,3 +14,7 @@ export const Review = styled.li`
   border-radius: 5px;
   padding: 6px;
 `;
+
+export const ReviewWrapper = styled.div`
+  padding: 20px;
+`;

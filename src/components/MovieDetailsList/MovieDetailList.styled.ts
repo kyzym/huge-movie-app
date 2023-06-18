@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { RatingProps } from '../../types';
 
 export const MovieDetailList = styled.div`
   display: flex;
@@ -20,7 +21,7 @@ export const TextContent = styled.p`
   font-size: 20px;
 `;
 
-export const Rating = styled.p`
+export const Rating = styled.p<RatingProps>`
   font-size: 18px;
   padding: 4px 8px;
   border-radius: 5px;

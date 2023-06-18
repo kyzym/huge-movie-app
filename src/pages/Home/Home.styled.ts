@@ -20,3 +20,7 @@ export const Title = styled.h1`
   align-items: flex-end;
   gap: 12px;
 `;
+
+export const HomeWrapper = styled.div`
+  padding: 20px;
+`;

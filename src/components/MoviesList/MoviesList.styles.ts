@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { RatingProps } from '../../types';
 
 export const ImageGalleryItem = styled.li`
   border-radius: 15px;
@@ -37,10 +38,6 @@ export const TitleContainer = styled.div`
   align-items: center;
   height: 110px;
 `;
-
-interface RatingProps {
-  rating: number;
-}
 
 export const Rating = styled.p<RatingProps>`
   font-size: 18px;

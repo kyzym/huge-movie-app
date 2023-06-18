@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { RatingProps } from '../../types';
 
 export const MovieLink = styled(Link)`
   text-decoration: none;
@@ -29,7 +30,7 @@ export const TitleRating = styled.div`
   gap: 8px;
 `;
 
-export const Rating = styled.p`
+export const Rating = styled.p<RatingProps>`
   font-size: 18px;
   padding: 4px 8px;
   border-radius: 5px;
@@ -50,4 +51,11 @@ export const Rating = styled.p`
   }};
 
   color: ${({ rating }) => (rating >= 4 && rating <= 7 ? 'black' : 'white')};
+`;
+
+export const MoviesSearchResultList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 `;

@@ -56,8 +56,8 @@ export const getMovieReviews = async (movieId: string): Promise<Review[]> => {
   return data.results;
 };
 
-export const getSearchMovies = async (query: string) => {
-  const { data } = await axios('/search/movie', {
+export const getSearchMovies = async (query: string): Promise<Movie[]> => {
+  const { data } = await axios<ApiResponse>('/search/movie', {
     params: {
       api_key: KEY,
       include_adult: false,

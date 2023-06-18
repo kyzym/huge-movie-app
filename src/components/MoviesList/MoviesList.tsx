@@ -2,11 +2,7 @@ import { ImageGalleryItem, ImageGalleryItemImage } from './MoviesList.styles';
 
 import * as SC from './MoviesList.styles';
 import { startImageUrl } from '../../utils/api/api';
-import { Movie } from '../../types';
-
-interface MoviesListProps {
-  movies: Movie[];
-}
+import { MoviesListProps } from '../../types';
 
 const MoviesList: React.FC<MoviesListProps> = ({ movies }) => {
   return movies.map(({ id, title, poster_path, vote_average }) => (

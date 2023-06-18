@@ -1,6 +1,5 @@
 import { useGetMovieReviews } from '../../hooks/useGetMovieReviews';
-import { Box } from '../../utils/Box.styled';
-import * as SC from '../Reviews/Reviews.styled';
+import * as SC from './Reviews.styled';
 
 const Reviews = () => {
   const reviews = useGetMovieReviews();
@@ -8,7 +7,7 @@ const Reviews = () => {
   if (!reviews) return null;
 
   return (
-    <Box as="div" p="20px">
+    <SC.ReviewWrapper>
       {reviews.length > 0 ? (
         <SC.ReviewsList>
           {reviews.map(({ author, content, id, created_at }) => (
@@ -32,7 +31,7 @@ const Reviews = () => {
       ) : (
         <p>We don't have any reviews for this movie, yet.</p>
       )}
-    </Box>
+    </SC.ReviewWrapper>
   );
 };
 

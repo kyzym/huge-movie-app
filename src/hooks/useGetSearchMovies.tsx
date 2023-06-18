@@ -3,10 +3,20 @@ import { useSearchParams } from 'react-router-dom';
 import { getSearchMovies } from '../utils/api/api';
 
 import { toast } from 'react-hot-toast';
+import { Movie } from '../types';
 
-export const useGetSearchMovies = () => {
+interface UseGetSearchMoviesReturn {
+  handleFormSubmit: (value: string) => void;
+  isEmpty: boolean;
+  searchQuery: string;
+  success: boolean;
+  loading: boolean;
+  movies: Movie[];
+}
+
+export const useGetSearchMovies = (): UseGetSearchMoviesReturn => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -38,7 +48,7 @@ export const useGetSearchMovies = () => {
     findMovies();
   }, [query, isEmpty]);
 
-  const handleFormSubmit = (value) => {
+  const handleFormSubmit = (value: string) => {
     setSearchQuery(value);
 
     const query = value.trim();
